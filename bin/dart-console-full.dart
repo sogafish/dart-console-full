@@ -1,5 +1,5 @@
-import 'package:dart-console-full/dart-console-full.dart' as dart-console-full;
+import 'package:dart_console_full/dart_console_full.dart' as dart_console_full;
 
 void main(List<String> arguments) {
-  print('Hello world: ${dart-console-full.calculate()}!');
+  print('Hello world: ${dart_console_full.calculate()}!');
 }
