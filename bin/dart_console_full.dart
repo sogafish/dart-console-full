@@ -1,5 +1,15 @@
-import 'package:dart_console_full/dart_console_full.dart' as dart_console_full;
+import 'dart:io';
 
-void main(List<String> arguments) {
-  print('Hello world: ${dart_console_full.calculate()}!');
+Future main() async {
+  var server = await HttpServer.bind(
+    InternetAddress.loopbackIPv4,
+    8080,
+  );
+
+  print('Listening on localhost:${server.port}');
+
+  await for (HttpRequest request in server) {
+    request.response.write({'message': 'AppIsRunning'});
+    await request.response.close();
+  }
 }
